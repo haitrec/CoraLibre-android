@@ -1,5 +1,5 @@
 <h1 align="center">
-    Corona Warn App - Android
+    CoraLibre Open Source version of the german Corona Warn App (unfinished) - Android
 </h1>
 
 <p align="center">
