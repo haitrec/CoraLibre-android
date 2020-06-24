@@ -6,7 +6,8 @@ import android.content.Intent
 import androidx.work.Data
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
-import com.google.android.gms.nearby.exposurenotification.ExposureNotificationClient
+// import com.google.android.gms.nearby.exposurenotification.ExposureNotificationClient
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.ExposureNotificationClient
 import de.rki.coronawarnapp.exception.ExceptionCategory.INTERNAL
 import de.rki.coronawarnapp.exception.NoTokenException
 import de.rki.coronawarnapp.exception.WrongReceiverException

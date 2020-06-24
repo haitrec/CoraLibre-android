@@ -1,6 +1,7 @@
 package de.rki.coronawarnapp.risk
 
-import com.google.android.gms.nearby.exposurenotification.ExposureSummary
+// import com.google.android.gms.nearby.exposurenotification.ExposureSummary
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.ExposureSummary
 import de.rki.coronawarnapp.server.protocols.ApplicationConfigurationOuterClass
 import junit.framework.TestCase.assertEquals
 import org.junit.Test

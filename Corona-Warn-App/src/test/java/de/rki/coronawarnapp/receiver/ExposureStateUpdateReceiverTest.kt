@@ -4,7 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.work.WorkManager
 import androidx.work.WorkRequest
-import com.google.android.gms.nearby.exposurenotification.ExposureNotificationClient
+// import com.google.android.gms.nearby.exposurenotification.ExposureNotificationClient
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.ExposureNotificationClient
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK

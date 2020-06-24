@@ -1,7 +1,8 @@
 package de.rki.coronawarnapp.transaction
 
 import androidx.core.app.NotificationCompat
-import com.google.android.gms.nearby.exposurenotification.ExposureSummary
+// import com.google.android.gms.nearby.exposurenotification.ExposureSummary
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.ExposureSummary
 import de.rki.coronawarnapp.CoronaWarnApplication
 import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.exception.RiskLevelCalculationException

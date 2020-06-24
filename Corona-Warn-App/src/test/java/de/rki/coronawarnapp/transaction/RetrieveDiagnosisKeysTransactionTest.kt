@@ -1,6 +1,7 @@
 package de.rki.coronawarnapp.transaction
 
-import com.google.android.gms.nearby.exposurenotification.ExposureConfiguration
+// import com.google.android.gms.nearby.exposurenotification.ExposureConfiguration
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.ExposureConfiguration
 import de.rki.coronawarnapp.nearby.InternalExposureNotificationClient
 import de.rki.coronawarnapp.service.applicationconfiguration.ApplicationConfigurationService
 import de.rki.coronawarnapp.storage.LocalData

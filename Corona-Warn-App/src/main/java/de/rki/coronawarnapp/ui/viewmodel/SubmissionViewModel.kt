@@ -4,7 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
+// import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.TemporaryExposureKey
 import de.rki.coronawarnapp.exception.ExceptionCategory
 import de.rki.coronawarnapp.exception.TransactionException
 import de.rki.coronawarnapp.exception.http.CwaWebException

@@ -11,18 +11,22 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Switch
 import android.widget.Toast
-import androidx.core.content.pm.PackageInfoCompat
+// import androidx.core.content.pm.PackageInfoCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.google.android.gms.common.GoogleApiAvailability
-import com.google.android.gms.nearby.exposurenotification.ExposureConfiguration
-import com.google.android.gms.nearby.exposurenotification.ExposureNotificationClient
-import com.google.android.gms.nearby.exposurenotification.ExposureSummary
-import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
+// import com.google.android.gms.common.GoogleApiAvailability
+// import com.google.android.gms.nearby.exposurenotification.ExposureConfiguration
+// import com.google.android.gms.nearby.exposurenotification.ExposureNotificationClient
+// import com.google.android.gms.nearby.exposurenotification.ExposureSummary
+// import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.ExposureConfiguration
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.ExposureNotificationClient
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.ExposureSummary
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.TemporaryExposureKey
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.google.protobuf.ByteString
@@ -143,12 +147,17 @@ class TestForAPIFragment : Fragment(), InternalExposureNotificationPermissionHel
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val v: Long = PackageInfoCompat.getLongVersionCode(
+        // Changes with CoraLibre:
+        // Since we do not use google play services, the version is set to -1, instead of
+        // performing a version check.
+/*        val v: Long = PackageInfoCompat.getLongVersionCode(
             activity?.packageManager!!.getPackageInfo(
                 GoogleApiAvailability.GOOGLE_PLAY_SERVICES_PACKAGE,
                 0
             )
-        )
+        )*/
+        val v: Long = -1
+
         label_googlePlayServices_version.text = "Google Play Services version: " + v.toString()
 
         token = UUID.randomUUID().toString()

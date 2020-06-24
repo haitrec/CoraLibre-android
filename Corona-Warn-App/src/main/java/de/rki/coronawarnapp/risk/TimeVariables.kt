@@ -1,6 +1,7 @@
 package de.rki.coronawarnapp.risk
 
-import com.google.android.gms.common.api.ApiException
+// import com.google.android.gms.common.api.ApiException
+import org.coralibre.android.sdk.fakegms.common.api.ApiException
 import de.rki.coronawarnapp.BuildConfig
 import de.rki.coronawarnapp.CoronaWarnApplication
 import de.rki.coronawarnapp.exception.ExceptionCategory

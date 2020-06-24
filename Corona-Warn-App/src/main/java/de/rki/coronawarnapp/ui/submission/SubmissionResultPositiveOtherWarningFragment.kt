@@ -10,7 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
+// import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.TemporaryExposureKey
 import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.databinding.FragmentSubmissionPositiveOtherWarningBinding
 import de.rki.coronawarnapp.exception.http.BadRequestException

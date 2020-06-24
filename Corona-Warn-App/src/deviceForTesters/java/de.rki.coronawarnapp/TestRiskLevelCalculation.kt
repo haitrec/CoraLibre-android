@@ -11,8 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
-import com.google.android.gms.nearby.Nearby
-import com.google.android.gms.nearby.exposurenotification.ExposureInformation
+// import com.google.android.gms.nearby.Nearby
+// import com.google.android.gms.nearby.exposurenotification.ExposureInformation
+import org.coralibre.android.sdk.fakegms.nearby.Nearby
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.ExposureInformation
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
 import de.rki.coronawarnapp.databinding.FragmentTestRiskLevelCalculationBinding

@@ -1,7 +1,8 @@
 package de.rki.coronawarnapp.util
 
 import KeyExportFormat
-import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
+// import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.TemporaryExposureKey
 import com.google.protobuf.ByteString
 import de.rki.coronawarnapp.server.protocols.AppleLegacyKeyExchange
 

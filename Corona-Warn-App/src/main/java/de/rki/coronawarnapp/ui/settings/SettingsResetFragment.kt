@@ -9,7 +9,8 @@ import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.google.android.gms.common.api.ApiException
+// import com.google.android.gms.common.api.ApiException
+import org.coralibre.android.sdk.fakegms.common.api.ApiException
 import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.databinding.FragmentSettingsResetBinding
 import de.rki.coronawarnapp.exception.ExceptionCategory

@@ -1,7 +1,8 @@
 package de.rki.coronawarnapp.transaction
 
 import KeyExportFormat
-import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
+// import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
+import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.TemporaryExposureKey
 import de.rki.coronawarnapp.nearby.InternalExposureNotificationClient
 import de.rki.coronawarnapp.service.diagnosiskey.DiagnosisKeyService
 import de.rki.coronawarnapp.service.submission.SubmissionService

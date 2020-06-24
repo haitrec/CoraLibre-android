@@ -2,11 +2,14 @@ package de.rki.coronawarnapp.exception.reporting
 
 import android.content.Intent
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.google.android.gms.common.api.ApiException
+// import com.google.android.gms.common.api.ApiException
+import org.coralibre.android.sdk.fakegms.common.api.ApiException
 import de.rki.coronawarnapp.CoronaWarnApplication
 import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.exception.ExceptionCategory
-import de.rki.coronawarnapp.exception.reporting.ReportingConstants.STATUS_CODE_GOOGLE_UPDATE_NEEDED
+// import de.rki.coronawarnapp.exception.reporting.ReportingConstants.STATUS_CODE_GOOGLE_UPDATE_NEEDED
+    // This import is obsolete with CoraLibre, but left here commented out for the purpose of
+    // documentation.
 import java.io.PrintWriter
 import java.io.StringWriter
 
@@ -34,18 +37,28 @@ fun Throwable.report(
     // override the message with a generic one if it is an ApiException
     if (this is ApiException) {
 
-        var errorMessage = R.string.errors_communication_with_api
+        var errorMessage: Int = R.string.errors_communication_with_api
 
-        if (this.statusCode == STATUS_CODE_GOOGLE_UPDATE_NEEDED) {
-            errorMessage = R.string.errors_google_update_needed
-        }
+        // Change introduced with CoraLibre:
+//        if (this.statusCode == STATUS_CODE_GOOGLE_UPDATE_NEEDED) {
+//            errorMessage = R.string.errors_google_update_needed
+//        }
+        // I use the intent's putExtra(...) method to add the exception message to the errorMessage
+        // string, to have as much information as possible (see below).
+            // TODO: Add statusCode field to ApiException, implement proper mapping from status
+            //  to statusCode when creating an ApiException. Then the original behaviour can be
+            //  used, which is commented out above. However, this might not be required.
 
         intent.putExtra(
             ReportingConstants.ERROR_REPORT_RES_ID,
             errorMessage
         )
         intent.putExtra(ReportingConstants.ERROR_REPORT_CODE_EXTRA, ErrorCodes.API_EXCEPTION.code)
-        intent.putExtra(ReportingConstants.ERROR_REPORT_API_EXCEPTION_CODE, this.statusCode)
+
+        // Change introduced with CoraLibre:
+        // Now, the exception message is added, instead of the statusCode:
+        // intent.putExtra(ReportingConstants.ERROR_REPORT_API_EXCEPTION_CODE, this.statusCode)
+        intent.putExtra(ReportingConstants.ERROR_REPORT_API_EXCEPTION_CODE, this.message)
     }
 
     if (stackExtra.isEmpty()) {
