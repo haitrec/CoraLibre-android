@@ -5,9 +5,9 @@ import org.coralibre.android.sdk.fakegms.nearby.exposurenotification.ExposureSum
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
-import io.mockk.every
+// import io.mockk.every
 import io.mockk.impl.annotations.MockK
-import io.mockk.mockk
+// import io.mockk.mockk
 import io.mockk.unmockkAll
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -66,12 +66,23 @@ class ExposureSummaryRepositoryTest {
      */
     @Test
     fun testInsert() {
-        val es = mockk<ExposureSummary>()
+        // The following workaround for CoraLibre is required to prevent this test from failing
+        // due to a mysterious "Mockk: Missing calls inside every { ... } block" error:
+            // TODO: Revert this workaround, make the original test succeed
+
+/*        val es = mockk<ExposureSummary>()
         every { es.attenuationDurationsInMinutes } returns intArrayOf(0)
         every { es.daysSinceLastExposure } returns 1
         every { es.matchedKeyCount } returns 1
         every { es.maximumRiskScore } returns 0
-        every { es.summationRiskScore } returns 0
+        every { es.summationRiskScore } returns 0*/
+
+        val es = ExposureSummary()
+        es.attenuationDurationsInMinutes = intArrayOf(0)
+        es.daysSinceLastExposure = 1
+        es.matchedKeyCount = 1
+        es.maximumRiskScore = 0
+        es.summationRiskScore = 0
 
         runBlocking {
             repository.insertExposureSummaryEntity(es)
